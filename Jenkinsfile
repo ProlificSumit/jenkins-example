@@ -15,8 +15,7 @@ pipeline {
         stage ('Compile stage') {
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
-                    //sh "${mavenHome}/bin/mvn compile"
-                    goals: 'mvn compile'
+                    sh "mvn compile"
                 }
             }
         }
