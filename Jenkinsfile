@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         def mavenHome = tool name: 'Maven_3_5_4', type: 'maven'
-        def javaHome = tool name: 'jdk-1.8', type: 'jdk'
+        def JAVA_HOME = tool name: 'jdk-1.8', type: 'jdk'
     }
 
 
