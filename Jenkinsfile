@@ -16,13 +16,7 @@ pipeline {
         stage ('Compile stage') {
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "$mavenHome"
-                    echo "$JAVA_HOME"
-                    echo "M2_HOME = ${M2_HOME}"
 
-                    '''
                     sh 'mvn --version'
                     sh 'mvn compile'
                 }
