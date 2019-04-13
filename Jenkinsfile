@@ -1,17 +1,17 @@
 pipeline {
     agent any
 
-
+    environment {
+        def mavenHome = tool name: 'Maven_3_5_4' type: 'maven'
+    }
 
 
     stages {
-        stage ('Compile stage') {
-                //get maven home path
-                def mvnHome = tool name: 'Maven_3_5_4', type: 'maven'
 
+        stage ('Compile stage') {
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
-                    sh "${mvnHome}/bin/mvn compile"
+                    sh "${mavenHome}/bin/mvn compile"
                 }
             }
         }
