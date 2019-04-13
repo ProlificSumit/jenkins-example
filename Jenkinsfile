@@ -5,9 +5,9 @@ pipeline {
 
 
     stages {
+        stage ('Compile stage') {
                 //get maven home path
                 def mvnHome = tool name: 'Maven_3_5_4', type: 'maven'
-        stage ('Compile stage') {
 
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
