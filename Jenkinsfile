@@ -18,6 +18,7 @@ pipeline {
                 withMaven(maven: 'Maven_3_5_4') {
 
                     bat 'mvn --version'
+                    bat 'mvn compile'
                     //sh 'mvn --version'
                     //sh 'mvn compile'
                 }
@@ -28,7 +29,8 @@ pipeline {
 
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
-                    sh 'mvn test'
+                    bat 'mvn test'
+                    //sh 'mvn test'
                 }
              }
          }
@@ -37,7 +39,8 @@ pipeline {
 
                 steps {
                 withMaven(maven: 'Maven_3_5_4') {
-                    sh 'mvn deploy'
+                    bat 'mvn deploy'
+                    //sh 'mvn deploy'
                 }
              }
          }
