@@ -17,8 +17,9 @@ pipeline {
             steps {
                 withMaven(maven: 'Maven_3_5_4') {
 
-                    sh 'mvn --version'
-                    sh 'mvn compile'
+                    bat 'mvn --version'
+                    //sh 'mvn --version'
+                    //sh 'mvn compile'
                 }
             }
         }
